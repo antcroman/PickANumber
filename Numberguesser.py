@@ -3,7 +3,7 @@ import time
 
 play_game = 1
 
-
+#1.1
 def number_validation(x):
     global check_pass                                               #validates users input to verify it is a number
     if x.strip().isdigit():
@@ -12,7 +12,7 @@ def number_validation(x):
         print("Input is not a number")
 
 
-
+#1.2
 def range_validation(x, y):                                            #validates users input to verify it is in an appropriate range
     if x < y:
         return
@@ -28,14 +28,14 @@ def number_declaration():                                                       
     global check_pass
     check_pass = 0
 
-    while check_pass == 0:
+    while check_pass == 0:                                                      #loops prompting for a value when the value check fails
         min_value = (input("Please enter a minimum value number (inclusive): "))
         number_validation(min_value)
 
     check_pass = 0
     min_value = int(min_value)
 
-    while check_pass == 0:
+    while check_pass == 0:                                                      #loops prompting for a value when the value check fails
         max_value = (input("Please enter a maximum value number (inclusive): "))
         number_validation(max_value)
 
@@ -51,8 +51,8 @@ def number_generator():
     random_number = random.randint(int(min_value), int(max_value))              #generate random number for the game
 
 
-
-def guess_validation(x):
+#3.1
+def guess_validation(x):                                                        #validates users guess to be within specified range and ensures it is a number
     global guess_verified_num
     guess_verified_num = 0
 
@@ -73,7 +73,7 @@ def guess_validation(x):
 
 
 #3
-def obtain_guess():
+def obtain_guess():                                                             #obtains guess from user and then validates it
     global user_guess
 
     user_guess = input("Guess the number between: " + str(min_value) + ' and ' + str(max_value) + ': ')    #obtains user input
@@ -82,7 +82,7 @@ def obtain_guess():
 
 
 #4
-def compare_numbers(x, y):
+def compare_numbers(x, y):                                                      #compares guessed number with generated number
     if x == y:
         print("You are correct")
         print("random number is " + str(y))
@@ -114,7 +114,7 @@ def play_again():
 
 print("Welcome to the number guesser")
 
-while play_game == 1:                                   #this determines if game will loop based on users desicion (whole game encompased in this while loop)                                                #loop stops user from trying to break game with incorrect input
+while play_game == 1:                                   #this determines if game will loop based on users desicion in play_again() (whole game encompased in this while loop)                                                #loop stops user from trying to break game with incorrect input
 
     number_declaration()
 
