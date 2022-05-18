@@ -1,7 +1,6 @@
 import random
 import time
 
-
 play_game = 1
 
 #1.1
